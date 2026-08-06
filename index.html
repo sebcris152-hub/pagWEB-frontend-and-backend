@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- Indica que el documento está escrito en HTML5 -->
+
+<html lang="es">
+<!-- Comienza el documento HTML y especifica que el idioma es español -->
+
+<head>
+  <!-- Contiene información del documento que no se muestra en la página -->
+
+  <meta charset="UTF-8">
+  <!-- Permite usar caracteres especiales como á, é, ñ, etc. -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hace que la página sea adaptable a celulares y tabletas -->
+
+  <title>Stakeholders y Requerimientos</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+
+  <link rel="stylesheet" href="estuco.css">
+  <!-- Conecta el archivo CSS donde está el diseño de la página -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Importa la librería jQuery para facilitar el uso de JavaScript -->
+</head>
+
+<body>
+
+  <!-- Menú de navegación con enlaces a cada sección -->
+  <nav class="sub">
+    <a href="#inicio">Inicio</a>
+    <a href="#stakeholders">Stakeholders</a>
+    <a href="#rf">Req Funcionales</a>
+    <a href="#rnf">Req No Funcionales</a>
+    <a href="#rfn">Req No Funcional (RNF)</a>
+  </nav>
+
+  <!-- Sección principal (portada) -->
+  <div class="hero" id="inicio">
+
+    <!-- Imagen principal -->
+    <img id="foto1" src="a.png" alt="Análisis de requerimientos">
+
+    <!-- Texto que acompaña la imagen -->
+    <div class="hero-text">
+      <h1>Stakeholders y Requerimientos</h1>
+      <p>
+        Identifica a los interesados de un proyecto y comprende la diferencia
+        entre lo que el sistema debe hacer y cómo debe hacerlo.
+      </p>
+    </div>
+  </div>
+
+  <!-- Sección donde se explica qué es un stakeholder -->
+  <section id="stakeholders" class="seccion">
+
+    <h2>¿Qué es un Stakeholder?</h2>
+
+    <!-- Introducción -->
+    <p class="intro">
+      Un <strong>stakeholder</strong> (interesado) es cualquier persona,
+      grupo u organización que puede afectar o ser afectado por un proyecto.
+    </p>
+
+    <h3 class="subtitulo">Clasificación de los Stakeholders</h3>
+
+    <!-- Contenedor de las tarjetas -->
+    <div class="container">
+
+      <!-- Tarjeta 1 -->
+      <div class="card">
+        <img src="p.png" alt="Stakeholders internos">
+        <h3>Internos</h3>
+        <p>
+          Pertenecen a la organización que desarrolla el proyecto.
+        </p>
+      </div>
+
+      <!-- Tarjeta 2 -->
+      <div class="card">
+        <img src="s.png" alt="Stakeholders externos">
+        <h3>Externos</h3>
+        <p>
+          Son personas u organizaciones externas afectadas por el proyecto.
+        </p>
+      </div>
+
+      <!-- Tarjeta 3 -->
+      <div class="card">
+        <img src="w.png" alt="Stakeholders primarios">
+        <h3>Primarios y Secundarios</h3>
+        <p>
+          Los primarios usan el sistema; los secundarios tienen interés indirecto.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Sección de Requerimientos Funcionales -->
+  <section id="rf" class="seccion alterna">
+
+    <h2>Requerimiento Funcional (RF)</h2>
+
+    <p class="intro">
+      Explica qué debe hacer el sistema.
+    </p>
+
+    <!-- Caja con un ejemplo -->
+    <div class="ejemplo">
+      <span class="etiqueta">Ejemplo</span>
+      <p>
+        "El sistema debe permitir al usuario registrarse."
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Sección de Requerimientos No Funcionales -->
+  <section id="rnf" class="seccion">
+
+    <h2>Requerimiento No Funcional (RNF)</h2>
+
+    <p class="intro">
+      Explica cómo debe funcionar el sistema.
+    </p>
+
+    <!-- Ejemplo -->
+    <div class="ejemplo">
+      <span class="etiqueta">Ejemplo</span>
+      <p>
+        "El sistema debe responder en menos de 2 segundos."
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Tabla con diferentes tipos de requisitos no funcionales -->
+  <section id="rfn" class="seccion alterna">
+
+    <h2>Requisitos No Funcionales (RFN)</h2>
+
+    <!-- Contenedor de la tabla -->
+    <div class="tabla-wrapper">
+
+      <table>
+
+        <!-- Encabezado de la tabla -->
+        <thead>
+          <tr>
+            <th>RFN</th>
+            <th>¿Qué es?</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+
+        <!-- Contenido de la tabla -->
+        <tbody>
+
+          <tr class="pp">
+            <td><b>Rendimiento</b></td>
+            <td>La velocidad del sistema.</td>
+            <td>La app debe cargar en 2 segundos.</td>
+          </tr>
+
+          <tr>
+            <td><b>Seguridad</b></td>
+            <td>Protección de los datos.</td>
+            <td>Las contraseñas deben estar encriptadas.</td>
+          </tr>
+
+          <tr class="pp">
+            <td><b>Usabilidad</b></td>
+            <td>Facilidad de uso.</td>
+            <td>Comprar en menos de 3 clics.</td>
+          </tr>
+
+          <tr>
+            <td><b>Accesibilidad</b></td>
+            <td>Uso por personas con discapacidad.</td>
+            <td>Compatible con lectores de pantalla.</td>
+          </tr>
+
+          <tr class="pp">
+            <td><b>Disponibilidad</b></td>
+            <td>Tiempo que el sistema está disponible.</td>
+            <td>99.9 % de disponibilidad.</td>
+          </tr>
+
+          <tr>
+            <td><b>Escalabilidad</b></td>
+            <td>Capacidad de soportar más usuarios.</td>
+            <td>Atender miles de usuarios al mismo tiempo.</td>
+          </tr>
+
+          <tr class="pp">
+            <td><b>Mantenibilidad</b></td>
+            <td>Facilidad para corregir errores.</td>
+            <td>Resolver fallos en menos de 4 horas.</td>
+          </tr>
+
+          <tr>
+            <td><b>Portabilidad</b></td>
+            <td>Funcionar en varios dispositivos.</td>
+            <td>Compatible con PC y celulares.</td>
+          </tr>
+
+          <tr class="pp">
+            <td><b>Compatibilidad</b></td>
+            <td>Integrarse con otros sistemas.</td>
+            <td>Conectarse con una pasarela de pagos.</td>
+          </tr>
+
+          <tr>
+            <td><b>Confiabilidad</b></td>
+            <td>Funcionar correctamente sin errores.</td>
+            <td>No perder datos en un apagón.</td>
+          </tr>
+
+          <tr class="pp">
+            <td><b>Restricciones tecnológicas</b></td>
+            <td>Tecnologías obligatorias del proyecto.</td>
+            <td>Usar Node.js y React.</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Material de apoyo — Análisis y Desarrollo de Software</p>
+  </footer>
+
+  <!-- Indicador para mostrar el tipo de dispositivo mediante CSS -->
+  <div class="indicador">
+    <samp class="celular">celular 📱 (&lt; 600px)</samp>
+    <samp class="tablet">tablet 🖵 (&lt; 900px)</samp>
+    <samp class="computador">computador 🖥️ (&lt; 1024px)</samp>
+  </div>
+
+  <!-- Código JavaScript usando jQuery -->
+  <script>
+
+    // Espera a que toda la página cargue antes de ejecutar el código
+    $(document).ready(function () {
+
+      // Cuando se haga clic en un botón...
+      $("button").click(function () {
+
+        // ...todos los elementos <div> tendrán una animación
+        $("div").animate({
+
+          // Se moverán 250 píxeles hacia la derecha
+          left: '250px',
+
+          // Se volverán semitransparentes
+          opacity: '0.5',
+
+          // Cambiarán su alto
+          height: '150px',
+
+          // Cambiarán su ancho
+          width: '150px'
+
+        });
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>
