@@ -1,0 +1,123 @@
+=========================================================
+                    README.TXT
+=========================================================
+
+NOMBRE DEL PROYECTO
+---------------------------------------------------------
+Página Web - Stakeholders y Requerimientos de Software
+
+AUTOR
+---------------------------------------------------------
+Nombre: Juan Sebastián Cristacho
+Fecha de elaboración:
+06 de agosto de 2026
+
+Institución:
+SENA
+
+Programa de formación:
+Tecnólogo en Análisis y Desarrollo de Software (ADSO)
+
+=========================================================
+DESCRIPCIÓN DEL PROYECTO
+=========================================================
+
+Este proyecto fue desarrollado como una actividad académica en clase con el
+objetivo de aplicar los conocimientos adquiridos sobre desarrollo web utilizando
+HTML, CSS y JavaScript.
+
+La página web presenta información sobre los stakeholders y los requerimientos
+de un proyecto de software, organizando el contenido de manera clara, ordenada
+y fácil de comprender. Además, cuenta con un diseño atractivo que mejora la
+experiencia del usuario durante la navegación.
+
+=========================================================
+OBJETIVO DEL PROYECTO
+=========================================================
+
+El propósito principal de este proyecto es fortalecer las habilidades en el
+desarrollo de páginas web mediante el uso de tecnologías básicas de programación,
+permitiendo crear interfaces organizadas, aplicar estilos personalizados y
+agregar funciones que mejoren la interacción del usuario.
+
+=========================================================
+TECNOLOGÍAS UTILIZADAS
+=========================================================
+
+- HTML5
+  Se utilizó para crear la estructura de la página web.
+
+- CSS3
+  Se empleó para diseñar la apariencia del sitio, aplicando colores, fuentes,
+  tamaños, márgenes, imágenes y distribución de los elementos.
+
+- JavaScript
+  Se utilizó para agregar funcionalidades e interactividad a la página cuando
+  fue necesario.
+
+=========================================================
+ESTRUCTURA DEL PROYECTO
+=========================================================
+
+El proyecto está compuesto por los siguientes archivos:
+
+index.html
+- Contiene toda la estructura principal de la página web.
+
+styles.css (o el nombre correspondiente)
+- Contiene los estilos utilizados para el diseño de la página.
+
+script.js
+- Contiene el código JavaScript encargado de las funciones del proyecto.
+
+imagenes/
+- Carpeta donde se almacenan las imágenes utilizadas.
+
+README.txt
+- Documento con la información general del proyecto.
+
+=========================================================
+FUNCIONALIDADES
+=========================================================
+
+• Presentación organizada de la información.
+• Diseño responsivo y agradable visualmente.
+• Uso de estilos personalizados mediante CSS.
+• Inclusión de imágenes e iconos.
+• Navegación sencilla.
+• Código organizado para facilitar su comprensión y mantenimiento.
+
+=========================================================
+REQUISITOS PARA EJECUTAR EL PROYECTO
+=========================================================
+
+Para visualizar correctamente este proyecto únicamente se necesita:
+
+- Un navegador web actualizado.
+- Tener todos los archivos del proyecto dentro de la misma carpeta.
+
+No es necesario instalar programas adicionales.
+
+=========================================================
+INSTRUCCIONES DE USO
+=========================================================
+
+1. Descargar o clonar el repositorio.
+2. Abrir la carpeta del proyecto.
+3. Localizar el archivo llamado "index.html".
+4. Abrirlo con cualquier navegador web.
+5. Navegar por la página y revisar su contenido.
+
+=========================================================
+OBSERVACIONES
+=========================================================
+
+Este proyecto fue elaborado exclusivamente con fines académicos como parte de
+las actividades desarrolladas durante la formación en el SENA. Su contenido
+tiene como finalidad demostrar la aplicación de conocimientos relacionados con
+HTML, CSS y JavaScript, así como las buenas prácticas en la organización de un
+proyecto web.
+
+=========================================================
+FIN DEL DOCUMENTO
+=========================================================
