@@ -1,0 +1,404 @@
+/* ============================================================
+   RESET BÁSICO
+   Esto "limpia" los estilos que traen los navegadores por defecto
+   (cada navegador pone márgenes/paddings distintos a los elementos).
+   Así todos partimos del mismo punto, sin sorpresas.
+   ============================================================ */
+* {
+    margin: 0;              /* quita el margen exterior de TODOS los elementos */
+    padding: 0;             /* quita el espacio interior de TODOS los elementos */
+    box-sizing: border-box; /* el padding y el borde se cuentan DENTRO del ancho/alto del elemento
+                                (evita que las cajas se hagan más grandes de lo esperado) */
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* tipografía general de toda la página */
+    color: #222;                                 /* color del texto (casi negro) */
+    line-height: 1.6;                            /* separación entre líneas de texto, para que se lea cómodo */
+}
+
+/* ============================================================
+   BARRA DE NAVEGACIÓN (.sub)
+   Es el menú de links de arriba de la página.
+   ============================================================ */
+.sub {
+    display: flex;                 /* pone los links en fila, uno al lado del otro */
+    flex-wrap: wrap;               /* si no caben, pasan a la siguiente línea en vez de desbordarse */
+    justify-content: space-evenly; /* reparte el espacio entre los links de forma pareja */
+    padding: 20px;                 /* espacio interno alrededor del menú */
+    background-color: #ffffff;     /* fondo blanco */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* sombra suave debajo del menú, le da profundidad */
+    position: sticky;              /* "pegajoso": el menú se queda fijo arriba al hacer scroll */
+    top: 0;                        /* se pega justo en el borde superior de la pantalla */
+    z-index: 10;                   /* asegura que el menú quede POR ENCIMA de otros elementos */
+}
+
+.sub a {
+    position: relative;     /* necesario para poder usar ::after y ubicar la línea animada */
+    color: #1b5e20;         /* verde oscuro para el texto del link */
+    text-decoration: none;  /* quita el subrayado típico de los links */
+    font-weight: 600;       /* texto un poco más grueso (seminegrita) */
+    padding: 5px 2px;       /* pequeño espacio interno alrededor del texto */
+    transition: color 0.3s ease; /* el cambio de color al pasar el mouse es SUAVE, no brusco */
+}
+
+/* Línea animada debajo del link al pasar el cursor */
+.sub a::after {
+    content: "";              /* ::after crea un elemento "fantasma" vacío, aquí se usa como línea decorativa */
+    position: absolute;
+    left: 0;
+    bottom: -4px;              /* la ubica justo debajo del texto del link */
+    width: 0%;                 /* empieza sin ancho (invisible) */
+    height: 3px;                /* grosor de la línea */
+    background-color: #4caf50; /* color verde más claro */
+    transition: width 0.3s ease; /* la línea "crece" suavemente en vez de aparecer de golpe */
+}
+
+.sub a:hover {
+    color: #4caf50; /* cuando pasas el mouse por el link, cambia a verde claro */
+}
+
+.sub a:hover::after {
+    width: 100%; /* al pasar el mouse, la línea decorativa crece hasta cubrir todo el link */
+}
+
+/* ============================================================
+   HERO (la sección grande con la imagen principal al inicio)
+   ============================================================ */
+.hero {
+    position: relative; /* sirve de referencia para ubicar .hero-text encima con "absolute" */
+    width: 100%;
+    height: 500px;       /* alto fijo de la sección hero */
+    overflow: hidden;    /* si la imagen se agranda (con el zoom del hover), no se sale de esta caja */
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* la imagen cubre todo el espacio sin deformarse (puede recortarse un poco) */
+    display: block;
+    transition: transform 0.6s ease; /* el zoom al pasar el mouse se hace de forma suave */
+}
+
+/* Animación: la imagen hace zoom suave al pasar el cursor */
+.hero:hover img {
+    transform: scale(1.08); /* agranda la imagen un 8% cuando el mouse está sobre el hero */
+}
+
+.hero-text {
+    position: absolute;        /* se posiciona libremente DENTRO de .hero (que es "relative") */
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%); /* truco para centrar verticalmente el cuadro de texto */
+    background-color: rgba(255,255,255,0.95); /* fondo blanco casi opaco (95%), deja ver un poco la imagen */
+    padding: 35px;
+    max-width: 480px;          /* no crece más allá de 480px de ancho */
+    width: 88%;                /* pero en pantallas chicas ocupa el 88% del espacio disponible */
+    border-radius: 6px;        /* bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* sombra para que "flote" sobre la imagen */
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: #1b5e20;
+}
+
+/* ============================================================
+   SECCIONES DE CONTENIDO GENERALES
+   ============================================================ */
+.seccion {
+    padding: 60px 10%; /* espacio arriba/abajo y a los lados de cada sección */
+}
+
+.seccion.alterna {
+    background-color: #f1f8f2; /* fondo verde muy clarito, para alternar secciones y que se distingan */
+}
+
+.seccion h2 {
+    color: #1b5e20;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-left: 6px solid #4caf50; /* línea verde decorativa a la izquierda del título */
+    padding-left: 12px;             /* separa el texto de esa línea */
+}
+
+.intro {
+    max-width: 800px;   /* limita el ancho del párrafo para que no se lea una línea gigante */
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.subtitulo {
+    margin: 10px 0 25px 0;
+    color: #2e7d32;
+}
+
+/* ============================================================
+   CAJONES DE STAKEHOLDERS (.container y .card)
+   Son las "tarjetas" que muestran a los distintos interesados.
+   ============================================================ */
+.container {
+    display: flex;             /* pone las tarjetas en fila */
+    justify-content: space-evenly; /* reparte el espacio entre tarjetas de forma pareja */
+    align-items: stretch;      /* todas las tarjetas tienen el mismo alto */
+    gap: 25px;                 /* espacio entre tarjetas */
+    flex-wrap: wrap;           /* si no caben en una fila, pasan a la siguiente */
+}
+
+.card {
+    background-color: #ffffff;
+    flex: 1 1 280px;   /* cada tarjeta intenta medir 280px, pero puede crecer o achicarse según el espacio */
+    min-width: 250px;  /* nunca se hace más angosta que esto */
+    max-width: 320px;  /* nunca se hace más ancha que esto */
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;  /* recorta cualquier contenido (como la imagen agrandada) que se salga de la tarjeta */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease; /* suaviza la animación al pasar el mouse */
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* la tarjeta "se levanta" un poco al pasar el mouse */
+    box-shadow: 0 14px 25px rgba(0,0,0,0.2); /* la sombra se hace más grande, reforzando el efecto de elevación */
+}
+
+.card:hover img {
+    transform: scale(1.1); /* la imagen dentro de la tarjeta hace zoom al pasar el mouse */
+}
+
+.card h3 {
+    margin: 18px 10px 8px 10px;
+    color: #1b5e20;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #444;
+    margin: 0 15px 20px 15px;
+}
+
+/* ============================================================
+   BLOQUES DE EJEMPLO (Requisitos Funcionales / No Funcionales)
+   ============================================================ */
+.ejemplo {
+    max-width: 700px;
+    background-color: #ffffff;
+    border-left: 5px solid #4caf50; /* línea verde a la izquierda, como si fuera una "cita destacada" */
+    border-radius: 6px;
+    padding: 20px 25px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ejemplo:hover {
+    transform: translateX(8px); /* el bloque se desliza un poco hacia la derecha al pasar el mouse */
+    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+.etiqueta {
+    display: inline-block;      /* se comporta como texto en línea, pero permitiendo darle padding/tamaño */
+    background-color: #4caf50;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;        /* bordes muy redondeados, tipo "pastilla" o "badge" */
+    margin-bottom: 10px;
+    text-transform: uppercase;  /* pone el texto en MAYÚSCULAS automáticamente */
+}
+
+/* ============================================================
+   TABLA (por ejemplo, de Requisitos No Funcionales)
+   ============================================================ */
+.tabla-wrapper {
+    width: 100%;
+    overflow-x: auto; /* si la tabla no cabe en pantallas angostas, aparece scroll horizontal
+                          en vez de romper el diseño de la página */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* une los bordes de las celdas en una sola línea, en vez de verse dobles */
+    min-width: 500px;          /* ancho mínimo, para que la tabla no se aplaste demasiado */
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #1b5e20; /* encabezado de la tabla en verde oscuro */
+    color: white;
+}
+
+.pp {
+    background-color: #c8e6c9; /* clase para resaltar filas o celdas específicas en verde clarito */
+}
+
+/* ============================================================
+   FOOTER (pie de página)
+   ============================================================ */
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+/* ============================================================
+   TIPOGRAFÍA FLUIDA
+   clamp(mínimo, preferido, máximo) hace que el tamaño de letra
+   se adapte solo al ancho de pantalla, sin necesidad de escribir
+   media queries para cada tamaño de texto.
+   ============================================================ */
+h1, h2, h3 {
+    font-size: clamp(1.5rem, 4vw, 3rem); /* nunca menor a 1.5rem, nunca mayor a 3rem,
+                                             y en medio crece según el 4% del ancho de pantalla (4vw) */
+}
+
+p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+/* ============================================================
+   INDICADOR DE TAMAÑO DE PANTALLA (solo para pruebas/desarrollo)
+   Es una cajita fija que muestra si estás viendo la página en
+   modo "computador", "tablet" o "celular". Esto NO debería ir
+   en la versión final que le muestres a un usuario real.
+   ============================================================ */
+.indicador {
+    position: fixed;   /* se queda fijo en la pantalla aunque hagas scroll */
+    top: 10px;
+    left: 10px;
+    z-index: 100;       /* por encima de casi todo */
+    background-color: #333;
+    color: #fff;
+    padding: 7px 5px;
+    border-radius: 2px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border: 0px solid #555;
+}
+
+.indicador samp {
+    display: none;    /* por defecto todas las etiquetas <samp> están ocultas... */
+    font-weight: bold;
+    /* ...y las media queries de abajo van mostrando solo la que corresponde al tamaño de pantalla actual */
+}
+
+
+/* Tablet: menos de 1024px */
+@media (max-width: 1023px) {
+    .indicador .computador { display: inline; } /* muestra el texto "computador" en pantallas medianas/grandes */
+
+    .seccion {
+        padding: 50px 6%; /* un poco menos de espacio lateral que en pantallas grandes */
+    }
+}
+
+/* Tablet pequeña: menos de 900px */
+@media (max-width: 899px) {
+    .indicador .computador { display: none; }  /* oculta "computador"... */
+    .indicador .tablet { display: inline; }     /* ...y muestra "tablet" */
+
+    .hero {
+        height: 400px; /* el hero se hace un poco más bajo */
+    }
+
+    /* Las tarjetas dejan de estar en fila estricta y empiezan
+       a acomodarse de 2 en 2 gracias al flex-wrap ya definido */
+    .card {
+        flex: 1 1 45%; /* cada tarjeta ocupa ~45% del ancho, así entran 2 por fila */
+    }
+}
+
+/* Celular: menos de 600px */
+@media (max-width: 599px) {
+    .indicador .tablet { display: none; }   /* oculta "tablet"... */
+    .indicador .celular { display: inline; } /* ...y muestra "celular" */
+
+    .sub {
+        flex-direction: column; /* el menú pasa de estar en fila a estar en columna (uno debajo del otro) */
+        padding: 10px;
+    }
+
+    .hero {
+        height: 320px; /* hero todavía más bajo, para pantallas chicas */
+    }
+
+    .hero-text {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%); /* centra el cuadro de texto tanto horizontal como verticalmente */
+        padding: 20px;
+        width: 85%;
+    }
+
+    .seccion {
+        padding: 40px 5%; /* menos espacio lateral en celulares */
+    }
+
+    /* En celular las tarjetas se apilan en una sola columna */
+    .container {
+        flex-direction: column; /* las tarjetas pasan de estar en fila a estar en columna */
+        align-items: center;
+    }
+
+    .card {
+        flex: 1 1 100%; /* cada tarjeta ocupa el 100% del ancho disponible */
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .ejemplo {
+        padding: 15px; /* menos espacio interno en pantallas chicas */
+    }
+}
+
+/* Nota: esta media query hace lo MISMO que la de arriba (.sub en columna a los 600px).
+   Está repetida, la puedes borrar sin miedo, ya que la de arriba ya lo cubre. */
+@media screen and (max-width: 600px) {
+.sub {flex-direction: column;}
+}
+
+/*
+   ANIMACIÓN (keyframes)
+   Define los "pasos" de una animación llamada "moverArriba":
+   empieza en su posición normal (from) y termina movida 30px
+   hacia abajo (to).
+ */
+@keyframes moverArriba {
+    from{
+        transform: translateY(0);   /* posición inicial: sin mover */
+    }
+    to{
+        transform: translateY(30px); /* posición final: 30px más abajo */
+    }
+}
+
+/* OJO: esto aplica la animación "moverArriba" a TODAS las imágenes de la página,
+   incluyendo las del menú, el hero y las tarjetas. Se repite infinitamente (infinite)
+   y va de ida y vuelta (alternate), por eso las imágenes suben y bajan sin parar.
+   Si solo querías animar alguna imagen en particular, te conviene usar una clase
+   específica en vez de aplicarlo a TODOS los <img> con el selector "img". */
+img{
+    animation: moverArriba 1s infinite alternate;
+}
+@media (max-width: 600px) {
+    img{
+        animation: none; /* en pantallas chicas, desactiva la animación para que no se vea raro */
+    }
+    
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stakeholders y Requerimientos</title>
+  <link rel="stylesheet" href="estuco.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <nav class="sub">
+    <a href="#inicio">Inicio</a>
+    <a href="#stakeholders">Stakeholders</a>
+    <a href="#rf">Req Funcionales</a>
+    <a href="#rnf">Req No Funcionales</a>
+    <a href="#rfn">Req No Funcional (RNF)</a>
+  </nav>
+
+  <div class="hero" id="inicio">
+    <img id="foto1" src="a.png" alt="Análisis de requerimientos">
+
+    <div class="hero-text">
+      <h1>Stakeholders y Requerimientos</h1>
+      <p>Identifica a los interesados de un proyecto y comprende la diferencia entre lo que el sistema debe hacer y
+        cómo debe hacerlo.</p>
+    </div>
+  </div>
+
+  <section id="stakeholders" class="seccion">
+    <h2>¿Qué es un Stakeholder?</h2>
+    <p class="intro">
+      Un <strong>stakeholder</strong> (interesado) es cualquier persona, grupo u organización
+      que puede afectar o ser afectado por un proyecto de software. No solo son los usuarios finales:
+      también incluye a quienes toman decisiones, financian, desarrollan o reciben el impacto del sistema.
+    </p>
+
+    <h3 class="subtitulo">Clasificación de los Stakeholders</h3>
+
+    <div class="container">
+      <div class="card">
+        <img src="p.png" alt="Stakeholders internos">
+        <h3>Internos</h3>
+        <p>Pertenecen a la organización que desarrolla o solicita el proyecto: gerentes, desarrolladores, analistas y
+          patrocinadores.</p>
+      </div>
+
+      <div class="card">
+        <img src="s.png" alt="Stakeholders externos">
+        <h3>Externos</h3>
+        <p>No pertenecen a la organización, pero se ven afectados: clientes, proveedores, entidades reguladoras y la
+          competencia.</p>
+      </div>
+
+      <div class="card">
+        <img src="w.png" alt="Stakeholders primarios">
+        <h3>Primarios y Secundarios</h3>
+        <p>Los primarios usan el sistema directamente (usuarios finales); los secundarios tienen interés indirecto
+          (auditores, soporte técnico).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="rf" class="seccion alterna">
+    <h2>Requerimiento Funcional (RF)</h2>
+    <p class="intro">
+      Un requerimiento funcional describe <strong>qué debe hacer el sistema</strong>: una acción,
+      tarea o función concreta que el software debe ejecutar para satisfacer una necesidad del usuario.
+    </p>
+    <div class="ejemplo">
+      <span class="etiqueta">Ejemplo</span>
+      <p>"El sistema debe permitir al usuario registrarse ingresando nombre, correo y contraseña."</p>
+    </div>
+  </section>
+
+  <section id="rnf" class="seccion">
+    <h2>Requerimiento No Funcional (RNF)</h2>
+    <p class="intro">
+      Un requerimiento no funcional describe <strong>cómo debe comportarse el sistema</strong>:
+      calidad, rendimiento, seguridad, usabilidad o disponibilidad, en lugar de una función específica.
+    </p>
+    <div class="ejemplo">
+      <span class="etiqueta">Ejemplo</span>
+      <p>"El sistema debe responder a cualquier consulta del usuario en menos de 2 segundos."</p>
+    </div>
+  </section>
+
+  <section id="rfn" class="seccion alterna">
+    <h2>Requisitos No Funcionales (RFN)</h2>
+
+    <div class="tabla-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>RFN</th>
+            <th>¿Qué es?</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="pp">
+            <td><b>Rendimiento</b></td>
+            <td>La velocidad del sistema.</td>
+            <td>La app debe cargar en 2 segundos.</td>
+          </tr>
+          <tr>
+            <td><b>Seguridad</b></td>
+            <td>Proteger los datos contra ataques.</td>
+            <td>Las claves deben estar encriptadas.</td>
+          </tr>
+          <tr class="pp">
+            <td><b>Usabilidad</b></td>
+            <td>Qué tan fácil es de usar.</td>
+            <td>Comprar en menos de 3 clics.</td>
+          </tr>
+          <tr>
+            <td><b>Accesibilidad</b></td>
+            <td>Uso para personas con discapacidad.</td>
+            <td>Soporte para lectores de pantalla.</td>
+          </tr>
+          <tr class="pp">
+            <td><b>Disponibilidad</b></td>
+            <td>Tiempo que el sistema está activo.</td>
+            <td>Funcionando el 99.9% del tiempo.</td>
+          </tr>
+          <tr>
+            <td><b>Escalabilidad</b></td>
+            <td>Capacidad de crecer con más usuarios.</td>
+            <td>Aguantar miles de usuarios al tiempo.</td>
+          </tr>
+          <tr class="pp">
+            <td><b>Mantenibilidad</b></td>
+            <td>Facilidad para corregir errores.</td>
+            <td>Arreglar un fallo en menos de 4 horas.</td>
+          </tr>
+          <tr>
+            <td><b>Portabilidad</b></td>
+            <td>Funcionar en diferentes dispositivos.</td>
+            <td>Sirve en PC, Celular, Chrome y Edge.</td>
+          </tr>
+          <tr class="pp">
+            <td><b>Compatibilidad</b></td>
+            <td>Integración con otros sistemas.</td>
+            <td>Conectarse con la pasarela de pagos.</td>
+          </tr>
+          <tr>
+            <td><b>Confiabilidad</b></td>
+            <td>Que trabaje bien y sin fallos.</td>
+            <td>Que no pierda datos si se apaga.</td>
+          </tr>
+          <tr class="pp">
+            <td><b>Restricciones tecnológicas</b></td>
+            <td>Límites o reglas técnicas obligatorias.</td>
+            <td>Usar Node.js y React obligatoriamente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>Material de apoyo &mdash; Análisis y Desarrollo de Software</p>
+  </footer>
+
+  <div class="indicador">
+    <samp class="celular">celular 📱 (&lt; 600px)</samp>
+    <samp class="tablet">tablet 🖵 (&lt; 900px)</samp>
+    <samp class="computador">computador 🖥️(&lt; 1024px)</samp>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("div").animate({
+          left: '250px',
+          opacity: '0.5',
+          height: '150px',
+          width: '150px'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
